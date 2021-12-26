@@ -1,6 +1,6 @@
-config.js
-config.json
 .env
 .idea
 node_modules
 
+.npm
+npm-debug.log*

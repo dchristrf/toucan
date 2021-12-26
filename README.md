@@ -9,19 +9,25 @@ Toucan is a Discord bot for streamlining Chainforest's DAO membership onbaording
 
 # Running locally
 
-make sure you have node > v16.13.1 installed locally, if not, checkout [nvm](https://github.com/nvm-sh/nvm)
+make sure you have node > v16.13.1 installed locally, if not, checkout [nvm](https://github.com/nvm-sh/nvm) or some other node version manager
 
 ```
-nvm install v16.13.1
-nvm use
 npm install
-cp config.test.js config.js
+cp .env.example .env
 ```
 
-To develop the blank bot locally, you will need to create a:
+Fill out all the variable values in the new .env file.
 
-- development blank foundation discord server
-- development blank foundation bot
+To develop the bot locally, you will need to create a:
+
+- development discord server
+- development bot
+
+## Add bot to Discord dev server
+
+`npm run add-bot`
+
+Will produce a link for adding the bot to servers over which you have admin control.
 
 ## Prerequisites
 
@@ -35,7 +41,7 @@ Use the [Blank Foundation Server Template](https://discord.new/xxbhaey7szrC) to 
 
 ## Create Discord Development Bot
 
-You can create your own blank foundation development bot in 3 steps
+You can create your own development bot in 3 steps
 
 - [Create a New Application on discord developer portal](https://discord.com/developers/applications) with a name
 - Create a bot for the application. Go to the `Bot` section, create a bot.
