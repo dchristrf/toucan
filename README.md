@@ -65,14 +65,6 @@ Run this script and open the generated link in browser to add your bot
 node addDevBot.js
 ```
 
-## Generate Config File
-
-Now that your dev bot is connected with your dev server, you can generate part of the config.js with this
-
-```
-node generateConfig.js
-```
-
 # Running tests
 
 npm run test
