@@ -1,12 +1,14 @@
 {
-  "name": "blankbot",
+  "name": "toucan",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jest.config.mjs",
-    "add-bot": "node scripts/addDevBot.js"
+    "get-link": "node scripts/getInviteLink.js",
+    "deploy-commands": "node scripts/deployCommands.js"
   },
   "keywords": [],
   "author": "",

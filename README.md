@@ -23,6 +23,12 @@ To develop the bot locally, you will need to create a:
 - development discord server
 - development bot
 
+Start local dev server:
+
+```
+npm run dev
+```
+
 ## Add bot to Discord dev server
 
 `npm run add-bot`
@@ -34,11 +40,6 @@ Will produce a link for adding the bot to servers over which you have admin cont
 Go to discord settings and turn developer mode on.
 ![Image 2021-12-12 at 9 36 13 PM](https://user-images.githubusercontent.com/2502947/145743785-75957609-0f12-43e0-b9b2-b7d2c838a9f2.jpg)
 
-## Create Discord Development Server
-
-Use the [Blank Foundation Server Template](https://discord.new/xxbhaey7szrC) to create a development blank foundation discord server.
-![Create Bot Server](docs/img/CreateDevBot.gif)
-
 ## Create Discord Development Bot
 
 You can create your own development bot in 3 steps
@@ -47,7 +48,7 @@ You can create your own development bot in 3 steps
 - Create a bot for the application. Go to the `Bot` section, create a bot.
 - In `config.js` add `clientId: <0AuthClientId>` which is located in the application settings.
   ![Image 2021-12-12 at 9 44 51 PM](https://user-images.githubusercontent.com/2502947/145744475-a9d71ac9-f0f6-4667-94c9-304b585e4fdf.jpg)
-- In `config.js` add `"discordToken": <discordToken>` located in the application settings.
+- In `config.js` add `"discordBotToken": <discordBotToken>` located in the application settings.
   ![Image 2021-12-12 at 9 48 25 PM](https://user-images.githubusercontent.com/2502947/145744771-ac3e62cb-e4f3-4604-b6e4-322fad977716.jpg)
 
 ## Enable Privileged Intent
@@ -62,9 +63,43 @@ You need enable it in the bot settings
 Run this script and open the generated link in browser to add your bot
 
 ```
-node addDevBot.js
+npm run get-invite
 ```
+
+## Airtable
+
+Add tables with these names and fields and (type) in your Base. "\*" indicates primary key
+
+**Applications**
+
+- `MessageId`\* (short text)
+- `DiscordUserId` (short text)
+- `DiscordUserName` (short text)
+- `ApplicationLink` (short text)
+- `Approved` (checkbox)
+- `AppliedAt` (createdAt)
+
+**Approvals**
+
+- `MessageId`\* (short text)
+- `DiscordUserId` (short text)
+- `DiscordUserName` (short text)
+- `ApplicationLink` (short text)
+- `MemberVoteCount` (number)
+- `Approvers` (short text)
+- `ApprovedAt` (createdAt)
+
+## Deploy bot commands
+
+Must run this to register slash commands
+
+`npm run deploy-commands`
 
 # Running tests
 
 npm run test
+
+# Notes
+
+- Once a Member is approved by vote, they remain Members unless manually removed. Undoing emoji votes after approval will not remove Member status.
+- You can edit the member and council roles names once configured. Roles are resolved by ID, so if you change a given role's name it will not impact this bot.

@@ -1,12 +1,12 @@
 - [x] remove voucher logic
-- [] investigate potential infinite loop in fetchAllMessages() whilte statement
-- [] make Member/Admin role names configable
-- [] make approver count configable
-- [] need REST?
+- [x] make Member/Council role names configable
+- [] make Member approver count configable
 
 to get from CF:
 
-- [] config channels
-- [] role names
-- [] discord admin perms
-- [] airtable creds
+- [] which channels (for: mod, apply, welcome)
+- [x] role names
+- [x] discord admin perms
+- [x] airtable creds
+- [x] name "Toucan" ok?
+- [] bot image

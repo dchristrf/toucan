@@ -2,7 +2,7 @@ import { default as config } from "./config.js";
 
 import * as commands from "./commands/index.js";
 
-import { handleApplication } from "./lib/index.js";
+import { handleReaction, handleApplication } from "./lib/index.js";
 
 import { Client, Intents } from "discord.js";
 
@@ -22,15 +22,30 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("messageReactionAdd", async (reaction, user) => {
+client.on("messageCreate", async (message) => {
+  if (message.author.bot) return;
+  if (message.channel.id !== config.applicationChannelId) {
+    console.log(message.channel.name);
+    console.log("ignoring message");
+    return;
+  }
+  console.log("New application");
+  try {
+    await handleApplication(client, message);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+client.on("messageReactionAdd", async (reaction) => {
   if (reaction.message.channel.id !== config.applicationChannelId) {
     console.log(reaction.message.channel.name);
     console.log("ignoring message");
     return;
   }
-  console.log("Checking reactions for message");
+  console.log("New reaction");
   try {
-    await handleApplication(client, reaction);
+    await handleReaction(client, reaction);
   } catch (err) {
     console.log(err);
   }
@@ -63,4 +78,4 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 // client.login logs the bot in and sets it up for use. You'll enter your token here.
-client.login(config.discordToken);
+client.login(config.discordBotToken);

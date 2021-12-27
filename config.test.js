@@ -1,7 +1,7 @@
 export default {
   // discord bot settings
   clientId: "test",
-  discordToken: "test",
+  discordBotToken: "test",
   // other discord settings
   guildId: "test",
   applicationChannelId: "test",
