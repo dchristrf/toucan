@@ -54,15 +54,15 @@ client.on("messageReactionAdd", async (reaction) => {
 client.on("guildMemberUpdate", async (oldMember, newMember) => {
   // check if the member was updated with the "member" role
   if (
-    !oldMember.roles.cache.some((role) => role.name === "Member") &&
-    newMember.roles.cache.some((role) => role.name === "Member")
+    !oldMember.roles.cache.some((role) => role.id === config.memberRoleId) &&
+    newMember.roles.cache.some((role) => role.id === config.memberRoleId)
   ) {
     const channel = client.channels.cache.find(
       (channel) => channel.id === config.welcomeChannelId
     );
     if (channel) {
       channel.send(
-        `Applicant ${newMember} has been promoted to Chainforest member! Welcome! Feel free to look around, ask questions`
+        `${newMember} has been promoted to Chainforest RainMaker! Welcome! Feel free to look around and ask questions `
       );
     }
   }
