@@ -35,6 +35,8 @@ npm run dev
 
 Will produce a link for adding the bot to servers over which you have admin control.
 
+**BOT MUST HAVE A ROLE HIGHER THAN THAT OF THE MEMBER ROLE**
+
 ## Prerequisites
 
 Go to discord settings and turn developer mode on.
