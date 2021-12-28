@@ -79,7 +79,7 @@ Add tables with these names and fields and (type) in your Base. "\*" indicates p
 - `DiscordUserName` (short text)
 - `ApplicationLink` (short text)
 - `Approved` (checkbox)
-- `AppliedAt` (createdAt)
+- `AppliedAt` (created time)
 
 **Approvals**
 
@@ -89,7 +89,7 @@ Add tables with these names and fields and (type) in your Base. "\*" indicates p
 - `ApplicationLink` (short text)
 - `MemberVoteCount` (number)
 - `Approvers` (short text)
-- `ApprovedAt` (createdAt)
+- `ApprovedAt` (created time)
 
 ## Deploy bot commands
 
