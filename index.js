@@ -62,7 +62,7 @@ client.on("guildMemberUpdate", async (oldMember, newMember) => {
     );
     if (channel) {
       channel.send(
-        `${newMember} has been promoted to Chainforest RainMaker! Welcome! Feel free to look around and ask questions `
+        `${newMember} has been promoted to Chainforest Rain Maker! Welcome! Feel free to look around and ask questions `
       );
     }
   }
