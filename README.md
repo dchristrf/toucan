@@ -4,6 +4,30 @@ Toucan is a Discord bot for streamlining Chainforest DAO's membership onbaording
 
 Code and concept heavily draws from BlankFoundation's [blankbot](https://github.com/BlankFoundation/blankbot)
 
+# What it does
+
+This bot allows Discord servers to easily vote on who to grant a member role via emojis. Here is the flow.
+
+1. After poking around the public channels, Newbie decides they want to become a member with access to hidden channels
+1. In some public `#applications` channel, Newbie pops a write up on who they are and why they want to join
+1. Existing members can add any emojis to Newbie's application post if they approve
+1. Once the unique member voting threshold is met, a message is sent to the moderators asking a council member to pledge final approval
+1. After a configured threshold of emoji votes from unique exisitng members is met, including at least one vote from a Council member, Newbie is automatilly granted a Member role and can now see the hidden channels. A welcome message is sent to a welcome channel to let the community know a new member is in town
+
+All these entities are configurable:
+
+- Application channel
+- Moderation channel
+- Welcome channel (optional)
+- Member role
+- Council role
+- Member vote count threshold (how many reuqired member votes)
+
+# Notes
+
+- Once a Member is approved by vote, they remain Members unless manually removed. Undoing emoji votes after approval will not remove Member status.
+- You can edit the member and council role names, as well as channel names once configured. These are resolved by ID, so if you change a given role or channels name it will not impact this bot. If you delete the role or channel you will nneed to reconigure a new ID
+
 # Install
 
 - Clone this repository
@@ -97,11 +121,6 @@ Must run this to register slash commands
 
 `npm run deploy-commands`
 
-# Running tests
+## Running tests
 
-npm run test
-
-# Notes
-
-- Once a Member is approved by vote, they remain Members unless manually removed. Undoing emoji votes after approval will not remove Member status.
-- You can edit the member and council roles names once configured. Roles are resolved by ID, so if you change a given role's name it will not impact this bot.
+`npm run test`
