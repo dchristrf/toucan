@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">=16.13.1"
+    "node": ">=16.13.0"
   },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
+    "start:replit": "npm run replit-config && npm run start",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config=jest.config.mjs",
     "get-link": "node scripts/getInviteLink.js",
-    "deploy-commands": "node scripts/deployCommands.js"
+    "deploy-commands": "node scripts/deployCommands.js",
+    "replit-config": "./scripts/replitConfig.sh"
   },
   "keywords": [],
   "author": "",

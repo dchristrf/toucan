@@ -35,7 +35,7 @@ All these entities are configurable:
 
 # Running locally
 
-make sure you have node > v16.13.1 installed locally, if not, checkout [nvm](https://github.com/nvm-sh/nvm) or some other node version manager
+make sure you have node > v16.13.0 installed locally, if not, checkout [nvm](https://github.com/nvm-sh/nvm) or some other node version manager
 
 ```
 npm install
@@ -128,3 +128,11 @@ Must run this to register slash commands
 ## Hosting
 
 https://replit.com/@clairefro/toucan#index.js
+
+IMPORTANT! For Replit hosting, ensure scripts start command is `start:replit`.
+
+This triggers this script before each Replit deploy to get node 16 on virtual machine:
+
+```sh
+npm init -y && npm i --save-dev node@16 && npm config set prefix=$(pwd)/node_modules/node && export PATH=$(pwd)/node_modules/node/bin:$PATH
+```
