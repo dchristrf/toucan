@@ -1,6 +1,8 @@
 # About
 
-Toucan is a Discord bot for streamlining Chainforest's DAO membership onbaording process. This is a modfied clone of BlankFoundation's [blankbot](https://github.com/BlankFoundation/blankbot)
+Toucan is a Discord bot for streamlining Chainforest DAO's membership onbaording process.
+
+Code and concept heavily draws from BlankFoundation's [blankbot](https://github.com/BlankFoundation/blankbot)
 
 # Install
 
