@@ -6,7 +6,7 @@ Code and concept heavily draws from BlankFoundation's [blankbot](https://github.
 
 # What it does
 
-This bot allows Discord servers to easily vote on who to grant a member role via emojis. Here is the flow.
+This bot allows insider members in Discord servers to easily vote on who to grant a member role via emojis. Here is the flow.
 
 1. After poking around the public channels, Newbie decides they want to become a member with access to hidden channels
 1. In some public `#applications` channel, Newbie pops a write up on who they are and why they want to join
