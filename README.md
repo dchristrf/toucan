@@ -137,4 +137,4 @@ To edit the node start command in replit, enter this command in the shell at the
 printf "language = \"nodejs\"\nrun = \"npm start:replit\"\n" > .replit
 ```
 
-This triggers an install of node16 as a dev dep to hackily use in replit
+`npm run start:replit` triggers an install of node16 as a dev dep to hackily use in replit
