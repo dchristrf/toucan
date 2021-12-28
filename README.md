@@ -124,3 +124,7 @@ Must run this to register slash commands
 ## Running tests
 
 `npm run test`
+
+## Hosting
+
+https://replit.com/@clairefro/toucan#index.js
