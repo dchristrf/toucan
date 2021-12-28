@@ -131,8 +131,10 @@ https://replit.com/@clairefro/toucan#index.js
 
 IMPORTANT! For Replit hosting, ensure scripts start command is `start:replit`.
 
-This triggers this script before each Replit deploy to get node 16 on virtual machine:
+To edit the node start command in replit, enter this command in the shell at the project root:
 
 ```sh
-npm init -y && npm i --save-dev node@16 && npm config set prefix=$(pwd)/node_modules/node && export PATH=$(pwd)/node_modules/node/bin:$PATH
+printf "language = \"nodejs\"\nrun = \"npm start:replit\"\n" > .replit
 ```
+
+This triggers an install of node16 as a dev dep to hackily use in replit
