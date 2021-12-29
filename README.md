@@ -8,11 +8,10 @@ Code and concept heavily draws from BlankFoundation's [blankbot](https://github.
 
 This bot allows insider members in Discord servers to easily vote on who to grant a member role via emojis. Here is the flow.
 
-1. After poking around the public channels, Newbie decides they want to become a member with access to hidden channels
-1. In some public `#applications` channel, Newbie pops a write up on who they are and why they want to join
-1. Existing members can add any emojis to Newbie's application post if they approve
-1. Once the unique member voting threshold is met, a message is sent to the moderators asking a council member to pledge final approval
-1. After a configured threshold of emoji votes from unique exisitng members is met, including at least one vote from a Council member, Newbie is automatilly granted a Member role and can now see the hidden channels. A welcome message is sent to a welcome channel to let the community know a new member is in town
+1. Newbie decides they want to become a member with access to hidden channels
+1. In some public `#applications` channel, Newbie posts a message saying they want to join
+1. Council members can add any emojis to Newbie's application post if they approve
+1. Once the unique council voting threshold is met, Newbie is automatilly granted a Member role and can now see the hidden channels. A welcome message is sent to a welcome channel to let the community know a new member is in town
 
 All these entities are configurable:
 
@@ -21,10 +20,11 @@ All these entities are configurable:
 - Welcome channel (optional)
 - Member role
 - Council role
-- Member vote count threshold (how many reuqired member votes)
+- Council vote count threshold (how many required council member votes)
 
 # Notes
 
+- A conucil member can add as many emojis as they want, but their vote is only counted once.
 - Once a Member is approved by vote, they remain Members unless manually removed. Undoing emoji votes after approval will not remove Member status.
 - You can edit the member and council role names, as well as channel names once configured. These are resolved by ID, so if you change a given role or channels name it will not impact this bot. If you delete the role or channel you will nneed to reconigure a new ID
 
@@ -127,14 +127,4 @@ Must run this to register slash commands
 
 ## Hosting
 
-https://replit.com/@clairefro/toucan#index.js
-
-IMPORTANT! For Replit hosting, ensure scripts start command is `start:replit`.
-
-To edit the node start command in replit, enter this command in the shell at the project root:
-
-```sh
-printf "language = \"nodejs\"\nrun = \"npm start:replit\"\n" > .replit
-```
-
-`npm run start:replit` triggers an install of node16 as a dev dep to hackily use in replit
+Currently hosted on Railway in Claire's account - monitor usage

@@ -24,11 +24,8 @@ client.on("ready", () => {
 
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
-  if (message.channel.id !== config.applicationChannelId) {
-    console.log(message.channel.name);
-    console.log("ignoring message");
-    return;
-  }
+  if (message.channel.id !== config.applicationChannelId) return;
+
   console.log("New application");
   try {
     await handleApplication(client, message);
@@ -38,11 +35,8 @@ client.on("messageCreate", async (message) => {
 });
 
 client.on("messageReactionAdd", async (reaction) => {
-  if (reaction.message.channel.id !== config.applicationChannelId) {
-    console.log(reaction.message.channel.name);
-    console.log("ignoring message");
-    return;
-  }
+  if (reaction.message.channel.id !== config.applicationChannelId) return;
+
   console.log("New reaction");
   try {
     await handleReaction(client, reaction);

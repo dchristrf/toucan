@@ -39,8 +39,8 @@ export default {
   moderatorChannelId: process.env.MODERATOR_CHANNEL_ID,
   welcomeChannelId: process.env.WELCOME_CHANNEL_ID,
   // voting config
-  memberVoteThreshold: process.env.MEMBER_VOTE_THRESHOLD
-    ? parseInt(process.env.MEMBER_VOTE_THRESHOLD)
+  councilVoteThreshold: process.env.COUNCIL_VOTE_THRESHOLD
+    ? parseInt(process.env.COUNCIL_VOTE_THRESHOLD)
     : 5,
   // airtable
   airtableKey: process.env.AIRTABLE_KEY,
