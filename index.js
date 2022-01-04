@@ -23,6 +23,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
+  console.log(message.author);
   if (message.author.bot) return;
   if (message.channel.id !== config.applicationChannelId) return;
 
