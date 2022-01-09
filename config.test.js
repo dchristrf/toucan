@@ -10,4 +10,5 @@ export default {
   // airtable
   airtableKey: "test",
   airtableId: "test",
+  superVoterId: "test",
 };

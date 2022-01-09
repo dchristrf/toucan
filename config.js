@@ -45,4 +45,6 @@ export default {
   // airtable
   airtableKey: process.env.AIRTABLE_KEY,
   airtableId: process.env.AIRTABLE_ID,
+  // super vote
+  superVoterId: process.env.SUPER_VOTER_ID,
 };
