@@ -21,10 +21,11 @@ All these entities are configurable:
 - Member role
 - Council role
 - Council vote count threshold (how many required council member votes)
+- Super voter id (optional - ID of user with automatic approval power)
 
 # Notes
 
-- A conucil member can add as many emojis as they want, but their vote is only counted once.
+- A council member can add as many emojis as they want, but their vote is only counted once.
 - Once a Member is approved by vote, they remain Members unless manually removed. Undoing emoji votes after approval will not remove Member status.
 - You can edit the member and council role names, as well as channel names once configured. These are resolved by ID, so if you change a given role or channels name it will not impact this bot. If you delete the role or channel you will nneed to reconigure a new ID
 
